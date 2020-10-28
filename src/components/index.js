@@ -1,4 +1,5 @@
 import Button from "./Button";
-import SignBlock from "./singBlock";
+import Login from "./Auth/loginSection";
+import Register from "./Auth/registerSection";
 
-export { Button, SignBlock };
+export { Button, Login, Register };

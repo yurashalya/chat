@@ -1,13 +1,14 @@
 import React from "react";
 
-import { SignBlock } from "components";
+import { Login, Register } from "components";
 
 import styles from "./auth.module.scss";
 
-const Auth = () => {
+const Auth = ({ match }) => {
+  console.log(match);
   return (
     <section className={styles.wrappAuth}>
-      <SignBlock />
+      {match.path === "/login" ? <Login /> : <Register />}
     </section>
   );
 };

@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Button } from "components";
 
-import styles from "./signBlock.module.scss";
+import styles from "../auth.module.scss";
 
-const SignBlock = () => {
+const Login = () => {
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -15,9 +16,10 @@ const SignBlock = () => {
   };
 
   return (
-    <div className={styles.wrappSignBlock}>
+    <div className={styles.wrappAuthBlock}>
       <div className={styles.authTitle}>
         <h1>Login</h1>
+        <p>Please, login to your account</p>
       </div>
       <Form
         name="basic"
@@ -56,13 +58,12 @@ const SignBlock = () => {
             type="primary"
           />
         </Form.Item>
-
-        <a href="#" className={styles.registerLink}>
+        <Link to="/register" className={styles.link}>
           Sing up
-        </a>
+        </Link>
       </Form>
     </div>
   );
 };
 
-export default SignBlock;
+export default Login;

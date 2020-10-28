@@ -1,0 +1,19 @@
+.authForm {
+  width: 100%;
+
+  .registerLink {
+    text-align: center;
+    display: block;
+    color: #adadad;
+    font-size: 15px;
+  }
+
+  .customBtn {
+    margin-top: 15px;
+    height: 42px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+  }
+}
