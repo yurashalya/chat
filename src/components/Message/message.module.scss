@@ -20,6 +20,21 @@
     }
   }
 
+  .attachments {
+	display: flex;
+	margin-top: 6px;
+	margin-bottom: 4px;
+
+	.attachmentsItem {
+		margin-right: 5px;
+		img {
+			max-width: 45px;
+			border-radius: 6px;
+			cursor: pointer;
+		}
+	}
+  }
+
   .content {
     .bubble {
       display: inline-block;
