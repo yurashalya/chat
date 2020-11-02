@@ -1,9 +1,22 @@
 .wrappHome {
-  border: 1px solid white;
-  background-color: white;
-  border-radius: 10px;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
+	display: flex;
+
+	margin-top: 20px;
+
+	border: 1px solid white;
+	background-color: white;
+	border-radius: 10px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+
+	.wrappDialogs {
+		width: 30%;
+	}
+
+	.wrappMessages {
+		width: 70%;
+		padding-left: 15px;
+	}
 }

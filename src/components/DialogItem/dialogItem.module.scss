@@ -1,0 +1,86 @@
+@import "~styles/variables";
+
+.wrappDialogItem { 
+	display: flex;
+	align-items: center;
+	height: 55px;
+	margin-bottom: 15px;
+
+	.dialogAvatar {
+		margin-right: 10px;
+		position: relative;
+		.avatar {
+			max-width: 50px;
+			border-radius: 50%;
+			box-shadow: 0px 5px 5px #b1a5a5;
+		}
+
+		.status {
+			position: absolute;
+			top: 72%;
+			left: 70%;
+			margin-bottom: 0;
+			width: 14px;
+			height: 14px;
+			background-color: $status-color;
+			border-radius: 50%;
+			border: 3px solid white;
+
+		}
+	}
+
+	.dialogsContent {
+		.infoTop {
+			display: flex;
+			justify-content: space-between;
+
+			.info {
+				display: flex;
+			}
+
+			.fullName {
+				font-size: 13px;
+			}
+
+			.date {
+				display: block;
+				text-align: end;
+				color: black;
+				opacity: 0.3;
+				font-size: 12px;
+				font-weight: 400;
+				margin-left: 7px;
+			}
+		}
+
+		.infoFooter {
+			display: flex;
+
+			.text {
+				color: black;
+				opacity: 0.7;
+				font-weight: 500;
+				margin-bottom: 0;
+				display: -webkit-box;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+			}
+
+			.count {
+				margin-bottom: 0px;
+				font-size: 13px;
+				background-color: $messageCount-color;
+				border-radius: 11px;
+
+				text-align: center;
+				font-weight: 600;
+				color: white;
+				box-shadow: 0px 4px 3px #e0d1d1;
+				margin-left: 3%;
+				padding-left: 8px;
+				padding-right: 10px;
+			}
+		}
+	}
+}
