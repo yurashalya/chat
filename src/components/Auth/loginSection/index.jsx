@@ -4,6 +4,8 @@ import { Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Button } from "components";
 
+import { validatePassword, validateMessages } from "validators/validation";
+
 import styles from "../auth.module.scss";
 
 const Login = () => {
@@ -22,7 +24,8 @@ const Login = () => {
         <p>Please, login to your account</p>
       </div>
       <Form
-        name="basic"
+        name="loginForm"
+        validateMessages={validateMessages}
         initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -30,7 +33,10 @@ const Login = () => {
       >
         <Form.Item
           name="username"
-          rules={[{ required: true, message: "Field is required!" }]}
+          rules={[
+            { required: true },
+            { min: 3, message: "Username must be minimum 3 characters." },
+          ]}
         >
           <Input
             size="large"
@@ -40,13 +46,13 @@ const Login = () => {
         </Form.Item>
         <Form.Item
           name="password"
-          rules={[{ required: true, message: "Field is required!" }]}
+          rules={[{ required: true }, { validator: validatePassword }]}
         >
-          <Input
+          <Input.Password
             size="large"
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
-            placeholder="Password"
+            placeholder="Enter Password"
           />
         </Form.Item>
 
