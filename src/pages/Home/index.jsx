@@ -1,37 +1,42 @@
 import React from "react";
-import { Message, DialogItem } from "components";
+import { Message, Dialogs } from "components";
 
 import styles from "./home.module.scss";
 
 const Home = ({ match }) => {
 	return (
 		<div className={styles.wrappHome}>
-			<div className={styles.wrappDialogs}>
-				<DialogItem
-					user={{
-						fullName: "Саша Пушкин",
-						isOnline: true
-					}}
-					unreaded={3}
-					isReaded={true}
-				/>
-				<DialogItem
-					user={{
-						fullName: "Саша Пушкин",
-						isOnline: false
-					}}
-					unreaded={76}
-					isReaded={false}
-				/>
-				<DialogItem
-					user={{
-						fullName: "Саша Пушкин",
-						isOnline: true
-					}}
-					unreaded={120}
-					isReaded={true}
-				/>
-			</div>
+			<Dialogs
+				userId={0}
+				items={[
+					{
+						text: "Мы тут недавно войска Ариовиста разбили, чуваки хотели закрепиться на галльских землях, лол 🌝",
+						createdAt: new Date('Thu Oct 29 2018 21:16:55'),
+						user: {
+							_id: 1,
+							fullname: "Sasha Sidorov",
+							avatar: "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png",
+							isOnline: true
+						},
+						isTyping: false,
+						isReaded: false,
+						unreaded: 23
+					},
+					{
+						text: "Hello 🔥",
+						createdAt: new Date('Tue Nov 03 2020 17:28:55'),
+						user: {
+							_id: 2,
+							fullname: "Kirk Hamment",
+							avatar: "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
+						},
+						isTyping: false,
+						isReaded: true,
+						unreaded: 4
+					},
+				]}
+
+			/>
 			<div className={styles.wrappMessages}>
 				<Message
 					avatar="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
@@ -74,6 +79,11 @@ const Home = ({ match }) => {
 						},
 					]}
 					date="Thu Oct 29 2020 15:12:24"
+				/>
+				<Message
+					avatar="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
+					date="Thu Oct 29 2020 21:12:24"
+					audio="https://notificationsounds.com/storage/sounds/file-sounds-1152-swinging.mp3"
 				/>
 			</div>
 		</div>

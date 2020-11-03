@@ -1,0 +1,33 @@
+.wrappMessage {
+	.audioProgress {
+		width: 40%;
+
+		.audioInfo {
+			display: flex;
+			align-items: center;
+			
+			.wrappButton {
+	
+				.btn {
+					width: 29px;
+					height: 28px;
+					border-radius: 50%;
+					background: #0f3997;
+					border: none;
+					cursor: pointer;
+					position: relative;
+	
+					img {
+						width: 13px;
+						position:absolute;
+						top: 50%;
+						left:50%;
+						-webkit-transform: translate(-50%, -50%);
+						-ms-transform: translate(-50%, -50%);
+						transform: translate(-50%, -50%);
+					}
+				}
+			}
+		}
+	}
+}

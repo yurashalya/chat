@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 
-import { IconReaded, Time } from "./../";
+import { IconReaded, Time, AudioMessage } from "./../";
 
 import styles from "./message.module.scss";
 
@@ -12,6 +12,7 @@ const Message = ({
 	text,
 	date,
 	isMe,
+	audio,
 	isReaded,
 	attachments,
 	isTyping,
@@ -29,17 +30,20 @@ const Message = ({
 				</div>
 			)}
 			<div className={styles.content}>
-				{(text || isTyping) && (
+				{(audio || text || isTyping) && (
 					<div className={clsx(styles.bubble, isTypingStyle)}>
 						{text && <p className={styles.text}>{text}</p>}
-						<div className={styles.typing}>
-							<div className={styles.typing__dot}></div>
-							<div className={styles.typing__dot}></div>
-							<div className={styles.typing__dot}></div>
-						</div>
+						{isTyping && (
+							<div className={styles.typing}>
+								<div className={styles.typing__dot}></div>
+								<div className={styles.typing__dot}></div>
+								<div className={styles.typing__dot}></div>
+							</div>
+						)}
+						{audio && <AudioMessage audio={audio} />}
 					</div>
 				)}
-				<div className={styles.attachments}>
+				{attachments && (<div className={styles.attachments}>
 					{attachments?.map((item, key) => {
 						return (
 							<div className={styles.attachmentsItem} key={key}>
@@ -51,7 +55,7 @@ const Message = ({
 							</div>
 						);
 					})}
-				</div>
+				</div>)}
 				<div className={styles.descMessage}>
 					{date && (
 						<span className={styles.date}>
@@ -82,7 +86,8 @@ Message.propTypes = {
 	attachments: PropTypes.array,
 	isTyping: PropTypes.bool,
 	isMe: PropTypes.bool,
-	Readed: PropTypes.bool,
+	isReaded: PropTypes.bool,
+	audio: PropTypes.string
 };
 
 export default Message;
