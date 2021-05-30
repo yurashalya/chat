@@ -36,10 +36,6 @@ const Home = ({ match }) => {
       />
       <Message
         avatar="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
-        isTyping={true}
-      />
-      <Message
-        avatar="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
         attachments={[
           {
             filename: "image.jpg",
@@ -47,6 +43,10 @@ const Home = ({ match }) => {
           },
         ]}
         date="Thu Oct 29 2020 15:12:24"
+      />
+      <Message
+        avatar="https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png"
+        isTyping={true}
       />
     </div>
   );
