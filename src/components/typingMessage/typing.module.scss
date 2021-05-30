@@ -1,0 +1,55 @@
+@import "~styles/variables";
+
+
+.wrappIsTyping {
+	background-color: $message-typing-blue;
+	display: inline-block;
+    box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733);
+    border-radius: 12px 12px 12px 0px;
+    padding: 9px 20px;
+    max-width: 440px;
+
+	.typing {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 1.3em;
+		position: relative;
+	  }
+	
+	  .typing__dot {
+		display: block;
+		width: 7px;
+		height: 7px;
+		background: $message-typing-circle;
+		border-radius: 50%;
+		opacity: 0;
+		animation: loadingFade 1s infinite;
+	  }
+	
+	  .typing__dot:nth-child(1) {
+		animation-delay: 0s;
+	  }
+	
+	  .typing__dot:nth-child(2) {
+		animation-delay: 0.2s;
+		margin-left: 6px;
+		margin-right: 6px;
+	  }
+	
+	  .typing__dot:nth-child(3) {
+		animation-delay: 0.4s;
+	  }
+	
+	  @keyframes loadingFade {
+		0% {
+		  opacity: 0;
+		}
+		50% {
+		  opacity: 0.8;
+		}
+		100% {
+		  opacity: 0;
+		}
+	  }
+}
